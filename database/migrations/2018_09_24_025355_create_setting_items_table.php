@@ -15,6 +15,7 @@ class CreateSettingItemsTable extends Migration
     {
         Schema::create('setting_items', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('type_id');
             $table->string('item_name',20);
             $table->boolean('active',1)->default(1);
             $table->timestamps();

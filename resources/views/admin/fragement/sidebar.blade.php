@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/admin/user">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>User management</span>
                 </a>
