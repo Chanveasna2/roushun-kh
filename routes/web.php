@@ -4,9 +4,7 @@ Route::get('/',function (){
 });
 Route::get('/admin','DashboardController@index');
 
-Route::get('/admin/user','AdminUserController@index');
-Route::post('/admin/user','AdminUserController@store');
-Route::get('/admin/user/create','AdminUserController@create');
+Route::resource('admin/users','AdminUserController');
 
 Auth::routes();
 

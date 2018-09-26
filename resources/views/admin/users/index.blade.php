@@ -20,6 +20,7 @@
         </ol>
 
         <!-- Page Content -->
+        <a href="{{route('users.create')}}" class="color:white;"><button class="btn btn-primary">Create</button></a>
         <table class="table">
             <thead class="thead-dark">
             <tr>

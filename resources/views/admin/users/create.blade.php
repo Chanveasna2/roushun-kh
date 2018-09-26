@@ -21,8 +21,8 @@
 
         <!-- Page Content -->
         @include('includes.form_error')
-
-        {!! Form::open(['method'=>'POST', 'action'=> 'AdminUserController@store','file'=>true]) !!}
+        <a href="{{route('users.index')}}" class="color:white;"><button class="btn btn-primary">All User</button></a>
+        {!! Form::open(['method'=>'POST', 'action'=> 'AdminUserController@store','files'=>true]) !!}
 
                 <div class="form-group">
                     {!! Form::label('name','Username:') !!}
@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('photo_id','File:') !!}
+                    {!! Form::label('photo_id','Photo:') !!}
                     {!! Form::file('photo_id',null,['class'=>'form-control']) !!}
                 </div>
 
