@@ -78,7 +78,7 @@
         {{--</li>--}}
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}
-                <img height="30px" class="rounded-circle" src="{{Auth::user()->photo->file}}" alt="">
+                <img height="30px" class="rounded-circle" src="{{Auth::user()->photo?$users->photo->file:'https://via.placeholder.com/400x400'}}" alt="">
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">Settings</a>
