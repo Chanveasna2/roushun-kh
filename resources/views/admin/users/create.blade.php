@@ -1,4 +1,4 @@
-@extends('admin.fragement.footer')
+{{--@extends('admin.fragement.footer')--}}
 @extends('admin.fragement.sidebar')
 @extends('admin.fragement.header')
 @section('content')

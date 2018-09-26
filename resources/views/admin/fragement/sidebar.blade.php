@@ -34,12 +34,14 @@
                     <span>Product</span>
                 </a>
             </li>
+            @if(Auth::user()->isAdmin())
             <li class="nav-item">
-                <a class="nav-link" href="/admin/user">
+                <a class="nav-link" href="{{route('users.index')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>User management</span>
                 </a>
             </li>
+            @endif
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -48,6 +50,7 @@
             </li>
         </ul>
         <div id="content-wrapper">
+        
 
 <section>
     @yield('content1')

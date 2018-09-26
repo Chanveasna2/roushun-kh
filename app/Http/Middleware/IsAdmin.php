@@ -19,7 +19,7 @@ class IsAdmin
     {
         $user = Auth::user();
 
-        if(!$user->isAdmin()){
+        if(!$user->isAdmin() ){
 
             return redirect('/');
         }
