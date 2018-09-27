@@ -36,7 +36,7 @@
     <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0 ">
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}
-                {{--<img height="30px" class="rounded-circle" src="{{Auth::user()->photo-file}}" alt="">--}}
+                <img height="30px" class="rounded-circle" src="{{Auth::user()->photo?Auth::user()->photo->file:'https://via.placeholder.com/400x400'}}" alt="">
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">Settings</a>
@@ -88,7 +88,7 @@
                 <span>Product</span>
             </a>
         </li>
-        @if(Auth::user()->isAdmin())
+        @if(Auth::user()->name=='Admin')
             <li class="nav-item">
                 <a class="nav-link" href="{{route('users.index')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>

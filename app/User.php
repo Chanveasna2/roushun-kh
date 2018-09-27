@@ -33,7 +33,7 @@ class User extends Authenticatable
     }
     public function isAdmin(){
 
-        if($this->role->name=='Admin' && $this->isActive ==1){
+        if($this->role->name=='Admin'||$this->role->name=='Editor' && $this->isActive ==1){
 
             return true;
         }
