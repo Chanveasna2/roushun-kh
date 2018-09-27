@@ -1,7 +1,5 @@
-{{--@extends('admin.fragement.footer')--}}
-@extends('admin.fragement.sidebar')
-@extends('admin.fragement.header')
-@section('content')
+
+@extends('admin.fragement.layout')
 
 @section('content1')
 
@@ -76,10 +74,4 @@
 
     </div>
 
-@stop
-
-
-@section('contents')
-
-@stop
 @stop

@@ -1,13 +1,7 @@
-{{--@extends('admin.fragement.footer')--}}
-@extends('admin.fragement.sidebar')
-@extends('admin.fragement.header')
-@section('content')
+
+@extends('admin.fragement.layout')
 
 @section('content1')
-
-
-
-
 
     <div class="container-fluid">
 
@@ -61,17 +55,6 @@
 
         {!! Form::close() !!}
 
-
-
-
     </div>
     <!-- /.container-fluid -->
-    </div>
-    </div>
-@stop
-
-
-@section('contents')
-
-@stop
 @stop

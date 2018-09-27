@@ -1,12 +1,7 @@
-@extends('admin.fragement.footer')
-@extends('admin.fragement.sidebar')
-@extends('admin.fragement.header')
+@extends('admin.fragement.layout')
 @section('content')
 
 @section('content1')
-
-
-
 
 
     <div class="container-fluid">
@@ -67,10 +62,4 @@
     <!-- /.container-fluid -->
     </div>
     </div>
-@stop
-
-
-@section('contents')
-
-@stop
 @stop
