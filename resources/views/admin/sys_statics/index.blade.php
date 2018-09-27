@@ -16,16 +16,13 @@
                 <p class="bg-danger">{{session('deleted_user')}}</p>
             @endif
         <!-- Page Content -->
-        <a href="{{route('users.create')}}" class="color:white;"><button class="btn btn-primary">Create</button></a>
+        <a href="{{route('sys_statics.create')}}" class="color:white;"><button class="btn btn-primary">Create</button></a>
         <table class="table">
             <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Photo</th>
-                <th scope="col">Username</th>
-                <th scope="col">Email</th>
-                <th scope="col">Role</th>
-                <th scope="col">Status</th>
+                <th scope="col">Static Name</th>
+                <th scope="col">Static Value</th>
                 <th scope="col">Created</th>
                 <th scope="col">Updated</th>
                 <th scope="col">Action</th>
@@ -33,22 +30,19 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($user as $users)
+            @foreach($sys_statics as $sys_static)
                 <tr>
-                    <th scope="row">{{$users->id}}</th>
-                    <td><img height="50px;" src="{{$users->photo?$users->photo->file:'https://via.placeholder.com/400x400'}}" alt=""></td>
-                    <td>{{$users->name}}</td>
-                    <td>{{$users->email}}</td>
-                    <td>{{$users->role->name}}</td>
-                    <td>{{$users->isActive==1?'Active':'Not Active'}}</td>
-                    <td>{{$users->created_at->diffForHumans()}}</td>
-                    <td>{{$users->updated_at}}</td>
+                    <th scope="row">{{$sys_static->id}}</th>
+                    <td>{{$sys_static->static_name}}</td>
+                    <td>{{$sys_static->static_value}}</td>
+                    <td>{{$sys_static->created_at->diffForHumans()}}</td>
+                    <td>{{$sys_static->updated_at}}</td>
                     <td>
-                        <a href="{{route('users.edit',$users->id)}}"><i class="btn btn-primary fas fa-edit"></i></a>
+                        <a href="{{route('sys_statics.edit',$sys_static->id)}}"><i class="btn btn-primary fas fa-edit"></i></a>
 
                     </td>
                     <td>
-                        {!! Form::open(['method'=>'DELETE','action'=>['AdminUserController@destroy',$users->id]]) !!}
+                        {!! Form::open(['method'=>'DELETE','action'=>['SysStaticController@destroy',$sys_static->id]]) !!}
                         <div class="form-group ">
                             {{--{!! Form::submit('',['class'=>'btn btn-danger fas fa-edit']) !!}--}}
                             <button class="btn btn-danger fas fa-trash-alt" type="submit" value=""></button>

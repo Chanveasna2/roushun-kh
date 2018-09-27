@@ -97,7 +97,7 @@
             </li>
         @endif
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Static Page</span>
             </a>

@@ -15,5 +15,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware'=>'IsAdmin'], function (){
 
     Route::resource('admin/users','AdminUserController');
+    Route::resource('admin/sys_statics','SysStaticController');
 
 });
