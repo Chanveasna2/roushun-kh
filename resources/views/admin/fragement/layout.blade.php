@@ -47,30 +47,35 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('slide_shows.index')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Setting Type</span>
+                <span>Slide Show</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Setting Item</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Promotion</span>
-            </a>
-        </li>
+
         <li class="nav-item">
             <a class="nav-link" href="{{route('products.index')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Product</span>
             </a>
         </li>
-        @if(Auth::user()->name=='Admin')
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('promotions.index')}}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Promotion</span>
+            </a>
+        </li>
+
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('sys_statics.index')}}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Static Page</span>
+            </a>
+        </li>
+
+        @if(Auth::user()->role->name=='Admin')
             <li class="nav-item">
                 <a class="nav-link" href="{{route('users.index')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -78,12 +83,7 @@
                 </a>
             </li>
         @endif
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('sys_statics.index')}}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Static Page</span>
-            </a>
-        </li>
+
     </ul>
     <div id="content-wrapper">
 

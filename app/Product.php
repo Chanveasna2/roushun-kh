@@ -38,4 +38,8 @@ class Product extends Model
 
         return $this->belongsTo('App\Photo','photo_id');
     }
+
+    public function user(){
+        return $this->belongsTo('app\User','user_id');
+    }
 }

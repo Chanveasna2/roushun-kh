@@ -7,6 +7,7 @@ use App\Product;
 use Illuminate\Http\Request;
 use App\User;
 use App\Photo;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
@@ -55,6 +56,8 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        $user = Auth::user();
+
         $input = $request->all();
 
         if($file = $request->file('photo_id'))
@@ -69,7 +72,7 @@ class ProductController extends Controller
         }
 
 
-        Product::create($input);
+        $user->products()->create($input);
 
 //        return $request->all();
         return redirect('/admin/products');
@@ -113,6 +116,8 @@ class ProductController extends Controller
     {
         //
         $products =Product::findOrFail($id);
+
+        $input =$request->all();
 
 
         if($file = $request->file('photo_id'))

@@ -18,6 +18,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/css/login.css" rel="stylesheet"/>
 </head>
 <body>
     <div id="app">
@@ -76,5 +79,8 @@
             @yield('content')
         </main>
     </div>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 </body>
 </html>

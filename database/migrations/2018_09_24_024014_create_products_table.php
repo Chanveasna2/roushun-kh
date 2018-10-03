@@ -15,11 +15,12 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned()->index();
+            $table->integer('category_id')->unsigned()->index();
             $table->string('pro_name',50);
             $table->string('pro_code',20)->nullable();
             $table->string('desc',200)->nullable();
             $table->double('prices',10)->nullable();
-            $table->integer('category_id');
             $table->boolean('isPop',1)->default(0);
             $table->timestamps();
         });

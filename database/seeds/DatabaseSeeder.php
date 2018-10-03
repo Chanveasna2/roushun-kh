@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $category = Category::create([
+
            'category_name'=>'Shampoo'
         ]);
     }

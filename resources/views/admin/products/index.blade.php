@@ -22,6 +22,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Product Name</th>
+                <th scope="col">By User</th>
                 <th scope="col">Product Code</th>
                 <th scope="col">Description</th>
                 <th scope="col">Prices</th>
@@ -37,9 +38,10 @@
                 <tr>
                     <th scope="row">{{$product->id}}</th>
                     <td>{{$product->pro_name}}</td>
+                    <td>{{$product->user->name}}</td>
                     <td>{{$product->pro_code}}</td>
-                    <td>{{$product->desc}}</td>
-                    <td>{{$product->prices}}</td>
+                    <td>{{str_limit($product->desc,20)}}</td>
+                    <td>${{$product->prices}}</td>
                     <td>{{$product->category->category_name}}</td>
                     <td>{{$product->isPop}}</td>
                     <td><img height="50px;" src="{{$product->photo?$product->photo->file:'https://via.placeholder.com/400x400'}}" alt=""></td>

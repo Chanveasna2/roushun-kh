@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class IsAdmin
 {
+
     /**
      * Handle an incoming request.
      *
@@ -19,7 +20,7 @@ class IsAdmin
     {
         $user = Auth::user();
 
-        if(!$user->isAdmin() ){
+        if(!$user->isAdmin()){
 
             return redirect('/');
         }
