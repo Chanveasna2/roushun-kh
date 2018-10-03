@@ -18,8 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('pro_name',50);
             $table->string('pro_code',20)->nullable();
             $table->string('desc',200)->nullable();
-            $table->string('images',200);
             $table->double('prices',10)->nullable();
+            $table->integer('category_id');
             $table->boolean('isPop',1)->default(0);
             $table->timestamps();
         });

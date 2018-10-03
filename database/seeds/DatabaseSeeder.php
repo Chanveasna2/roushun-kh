@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Role;
+use App\Category;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,6 +27,10 @@ class DatabaseSeeder extends Seeder
             'isActive'=>'1',
             'email'=>'admin@roushun-kh.com',
             'password'=>bcrypt('123123')
+        ]);
+
+        $category = Category::create([
+           'category_name'=>'Shampoo'
         ]);
     }
 }

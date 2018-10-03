@@ -3,25 +3,7 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>SB Admin - Blank Page</title>
-
-    <!-- Bootstrap core CSS-->
-    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template-->
-    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-    <!-- Page level plugin CSS-->
-    <link href="/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="/css/sb-admin.css" rel="stylesheet">
+@include('admin.fragement.style')
 
 </head>
 <body id="page-top">
@@ -83,7 +65,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('products.index')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Product</span>
             </a>
@@ -97,7 +79,7 @@
             </li>
         @endif
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{route('sys_statics.index')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Static Page</span>
             </a>
@@ -123,14 +105,7 @@
 
 
 <!-- Bootstrap core JavaScript-->
-<script src="/vendor/jquery/jquery.min.js"></script>
-<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="/js/sb-admin.min.js"></script>
+@include('admin.fragement.footerjs')
 
 </body>
 
