@@ -8,9 +8,9 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="index.blade.php">Dashboard</a>
+                <a href="/admin/products">Product</a>
             </li>
-            <li class="breadcrumb-item active">Blank Page</li>
+            <li class="breadcrumb-item active">create</li>
         </ol>
 
         <!-- Page Content -->

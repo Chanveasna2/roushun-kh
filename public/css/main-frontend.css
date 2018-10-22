@@ -1,0 +1,18 @@
+.nav{
+    padding: 5px;
+}
+.nav-link{
+    color: white;
+}
+.nav-link:hover{
+    color: deepskyblue;
+}
+.container-fluid{
+    background-color: #bdcebe;
+}
+.navbar{
+    padding: 40px;
+}
+.container {
+    max-width: 1000px;
+}
