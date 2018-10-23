@@ -1,6 +1,6 @@
 <?php
 Route::get('/',function (){
-   return "Welcome to Home Page";
+   return view("frontend.homepage.homepage");
 });
 
 Route::get('/admin','DashboardController@index');

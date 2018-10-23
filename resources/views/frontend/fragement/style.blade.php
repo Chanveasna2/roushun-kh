@@ -5,7 +5,7 @@
 <meta name="author" content="">
 
 <title>SB Admin - Blank Page</title>
-
+<link rel="icon" href="/images/ROUSHUNLOGOwhite.png">
 <!-- Bootstrap core CSS-->
 <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 

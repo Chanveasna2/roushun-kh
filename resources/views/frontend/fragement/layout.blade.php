@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Home</title>
+<title>Roushun Cambodia</title>
 
 <head>
 
@@ -11,7 +11,7 @@
     <div class="container" style="height: 100px">
         <div class="row" id="header">
             <div id="logo">
-                <img src="/images/logo.png">
+                <a href="/"><img src="/images/logo.png"></a>
             </div>
             <div id="adv">
                 <img src="/images/adv.gif">
@@ -29,7 +29,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a class="navbar-brand fas fa-home" href="#" style="color: white;"></a>
+                    <a class="navbar-brand fas fa-home" href="/" style="color: white;"></a>
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" href="#">អំពីផលិតផល<span class="sr-only">(current)</span></a>
@@ -73,23 +73,21 @@
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4">
                     <h5>អំពីក្រុមហ៊ុន</h5>
-                    <ul class="list-unstyled quick-links">
-                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
-                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
-                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
-                    </ul>
+                    {{--<ul class="list-unstyled quick-links">--}}
+                        {{--<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>--}}
+                        {{--<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>--}}
+                        {{--<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>--}}
+                        {{--<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>--}}
+                        {{--<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>--}}
+                    {{--</ul>--}}
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4">
-                    <h5>Quick links</h5>
-                    <ul class="list-unstyled quick-links">
-                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
-                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
-                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-                        <li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
-                    </ul>
+                    <h5>អាសយដ្ឋាន៖</h5>
+                    <p style="color: white;">អាសយដ្ឋាន៖ សង្កាត់ គីឡូម៉ែត្រលេខ៦
+
+                        ខណ្ឌ ឬស្សីកែវ រាជធានីភ្នំពេញ</p>
+                    <p style="color: white;">លេខទូរស័ព្ទ: 010 463 463​ /
+                        016 475 799</p>
                 </div>
             </div>
             <div class="row">
