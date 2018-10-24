@@ -20,3 +20,6 @@
 
 <link href="/css/main-frontend.css" rel="stylesheet">
 <link href="/css/footer_css.css" rel="stylesheet">
+<link href="/css/contactus.css" rel="stylesheet">
+<link href="/css/aboutus.css" rel="stylesheet">
+<link href="/css/about_product.css" rel="stylesheet">

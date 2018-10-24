@@ -16,17 +16,17 @@ Route::get('/main-page',function (){
     return view("frontend.homepage.homepage");
 });
 
-Route::get('/products',function (){
-   return view("frontend.homepage.homepage");
+Route::get('/about-products',function (){
+   return view("frontend.about_product");
 });
 Route::get('/about-us',function (){
-    return view("frontend.homepage.homepage");
+    return view("frontend.aboutus");
 });
 Route::get('/distribution-network',function (){
-    return view("frontend.homepage.homepage");
+    return view("frontend.distribution");
 });
 Route::get('/contact-us',function (){
-    return view("frontend.homepage.homepage");
+    return view("frontend.contactus");
 });
 
 Route::group(['middleware'=>'IsAdmin'], function (){

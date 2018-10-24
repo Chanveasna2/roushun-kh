@@ -32,16 +32,16 @@
                     <a class="navbar-brand fas fa-home" href="/" style="color: white;"></a>
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">អំពីផលិតផល<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{url('/about-products')}}">អំពីផលិតផល<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">ដៃគូចែកចាយ</a>
+                            <a class="nav-link" href="{{url('/distribution-network')}}">ដៃគូចែកចាយ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">អំពីក្រុមហ៊ុន</a>
+                            <a class="nav-link" href="{{ url('/about-us') }}">អំពីក្រុមហ៊ុន</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">ទំនាក់ទំនង</a>
+                            <a class="nav-link" href="{{ url('/contact-us') }}">ទំនាក់ទំនង</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">ប្រភេទផលិតផល</a>
