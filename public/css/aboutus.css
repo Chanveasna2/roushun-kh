@@ -15,3 +15,10 @@
 .title{
     color: #07a7db;
 }
+#about1:hover .image1 {
+    opacity: 0.2;
+}
+
+#about2:hover .image2 {
+    opacity: 0.2;
+}

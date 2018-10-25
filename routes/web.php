@@ -19,6 +19,9 @@ Route::get('/main-page',function (){
 Route::get('/about-products',function (){
    return view("frontend.about_product");
 });
+Route::get('/product-category',function (){
+    return view("frontend.category");
+});
 Route::get('/about-us',function (){
     return view("frontend.aboutus");
 });

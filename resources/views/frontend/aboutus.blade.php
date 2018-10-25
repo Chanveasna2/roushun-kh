@@ -7,15 +7,15 @@
                 <h4 class="title">អំពីក្រុមហ៊ុន</h4>
                 <p class="about_company">Khmer Household & Healthcare Co. Ltd. គឺជាក្រុមហ៊ុនផលិតក្នុងស្រុករបស់កម្ពុជា ដែលផ្តល់ជូនផលិតផលប្រើប្រាស់ផ្ទាល់ខ្លួន និងផលិតផលសម្រាប់ប្រើប្រាស់នៅក្នុងផ្ទះដែលមានគុណភាពខ្ពស់។ ពីកម្មវិធីឯកជនរហូតដល់ការប្រើប្រាស់លក្ខណៈពាណិជ្ជកម្ម យើងមានគោលបំណងធ្វើឱ្យផលិតផលរបស់យើង ជាផ្នែកមួយនៃការប្រើប្រាស់ក្នុងជីវិតប្រចំាថ្ងៃ របស់ប្រជាជននៅក្នុងប្រទេសកម្ពុជា</p>
             </div>
-            <div class="col-md-5">
-                <img src="/images/about1.jpg">
+            <div class="col-md-5" id="about1">
+                <img src="/images/about1.jpg" class="image1">
             </div>
         </div>
     </div>
     <div class="container" id="mission">
         <div class="row">
-            <div class="col-md-5">
-                <img src="/images/about1.jpg">
+            <div class="col-md-5" id="about2">
+                <img src="/images/about1.jpg"  class="image2">
             </div>
             <div class="col-md-7">
                 <h4 class="title" id="title_vision">ចក្ខុវិស័យ</h4>

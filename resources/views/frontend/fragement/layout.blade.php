@@ -35,6 +35,9 @@
                             <a class="nav-link" href="{{url('/about-products')}}">អំពីផលិតផល<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/product-category') }}">ប្រភេទផលិតផល</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{url('/distribution-network')}}">ដៃគូចែកចាយ</a>
                         </li>
                         <li class="nav-item">
@@ -43,9 +46,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/contact-us') }}">ទំនាក់ទំនង</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">ប្រភេទផលិតផល</a>
-                        </li>
+
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

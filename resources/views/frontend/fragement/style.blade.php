@@ -23,3 +23,4 @@
 <link href="/css/contactus.css" rel="stylesheet">
 <link href="/css/aboutus.css" rel="stylesheet">
 <link href="/css/about_product.css" rel="stylesheet">
+<link href="/css/category.css" rel="stylesheet">
