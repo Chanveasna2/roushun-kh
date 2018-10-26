@@ -1,7 +1,5 @@
 <?php
-Route::get('/',function (){
-   return view("frontend.homepage.homepage");
-});
+Route::get('/','HomePageController@index');
 
 Route::get('/admin','DashboardController@index');
 
@@ -12,16 +10,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/main-page',function (){
-    return view("frontend.homepage.homepage");
-});
+Route::get('/main-page','HomePageController@index');
 
 Route::get('/about-products',function (){
-   return view("frontend.about_product");
+    return view("frontend.about_product");
 });
-Route::get('/product-category',function (){
-    return view("frontend.category");
-});
+Route::get('/product-category','ProductsController@index');
+
 Route::get('/about-us',function (){
     return view("frontend.aboutus");
 });

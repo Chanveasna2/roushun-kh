@@ -34,4 +34,45 @@
             </div>
         </div>
 
+        <div class="container" style="background-color: #ea262a;border-top-right-radius: 10px;border-top-left-radius: 10px;margin-top: 10px">
+            <div style="background-color: #ea262a; height: 30px;margin-top: 10px;color: white;">LOGO COLLECTION</div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-6 ">
+                        <img src="/images/1.jpg" class="img-responsive img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="/images/2.jpg" class="img-responsive img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="background-color: #07a7db;border-top-right-radius: 10px;border-top-left-radius: 10px;margin-top: 10px">
+            <div style="background-color: #07a7db; height: 30px;margin-top: 10px; color: white;">All Products</div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    @foreach($pro as $pro)
+                        <div class="col-md-3 item">
+                        <div class="thumb-wrapper">
+                            <div class="img-box">
+                                <img src="{{$pro->photo->file}}" class="img-responsive img-fluid">
+                            </div>
+                            <div class="thumb-content">
+                                <h4>{{$pro->pro_name}}</h4>
+                                <p class="item-price"><strike></strike> <span>${{$pro->prices}}</span></p>
+                            </div>
+                        </div>
+                        </div>
+                        @endforeach
+                </div>
+            </div>
+        </div>
+
     @stop

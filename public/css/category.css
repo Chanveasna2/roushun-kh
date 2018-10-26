@@ -30,7 +30,17 @@ h2::after {
     text-align: center;
     overflow: hidden;
 }
+.item {
+    min-height: 330px;
+    text-align: center;
+    overflow: hidden;
+}
 .carousel .item .img-box {
+    height: 160px;
+    width: 100%;
+    position: relative;
+}
+.item .img-box {
     height: 160px;
     width: 100%;
     position: relative;
@@ -45,11 +55,37 @@ h2::after {
     left: 0;
     right: 0;
 }
+.item img {
+    max-width: 100%;
+    max-height: 100%;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
 .carousel .item h4 {
     font-size: 18px;
     margin: 10px 0;
 }
+item h4 {
+    font-size: 18px;
+    margin: 10px 0;
+}
 .carousel .item .btn {
+    color: #333;
+    border-radius: 0;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: none;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin-top: 5px;
+    line-height: 16px;
+}
+.item .btn {
     color: #333;
     border-radius: 0;
     font-size: 11px;
@@ -67,7 +103,18 @@ h2::after {
     border-color: #ffff;
     box-shadow: none;
 }
+.item .btn:hover, .carousel .item .btn:focus {
+    color: #ffff;
+    background: #ffc000;
+    border-color: #ffff;
+    box-shadow: none;
+}
 .carousel .item .btn i {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.item .btn i {
     font-size: 14px;
     font-weight: bold;
     margin-left: 5px;
@@ -102,11 +149,23 @@ h2::after {
     font-size: 13px;
     padding: 2px 0;
 }
+.item-price {
+    font-size: 13px;
+    padding: 2px 0;
+}
 .carousel .item-price strike {
     color: #999;
     margin-right: 5px;
 }
+item-price strike {
+    color: #999;
+    margin-right: 5px;
+}
 .carousel .item-price span {
+    color: #86bd57;
+    font-size: 110%;
+}
+.item-price span {
     color: #86bd57;
     font-size: 110%;
 }
@@ -132,3 +191,5 @@ h2::after {
 .carousel-indicators li.active {
     background: rgba(0, 0, 0, 0.6);
 }
+
+
