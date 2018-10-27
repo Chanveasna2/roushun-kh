@@ -1,4 +1,7 @@
+
 <?php
+use App\SysStatic;
+
 Route::get('/','HomePageController@index');
 
 Route::get('/admin','DashboardController@index');
@@ -13,13 +16,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/main-page','HomePageController@index');
 
 Route::get('/about-products',function (){
-    return view("frontend.about_product");
+    $sys_s=SysStatic::where('id',5)->get();
+    return view("frontend.about_product",compact("sys_s"));
 });
 Route::get('/product-category','ProductsController@index');
 
 Route::get('/about-us','AboutUsController@index');
 Route::get('/distribution-network',function (){
-    return view("frontend.distribution");
+    $sys_s=SysStatic::where('id',5)->get();
+    return view("frontend.distribution",compact("sys_s"));
 });
 Route::get('/contact-us','ContactUsController@index');
 

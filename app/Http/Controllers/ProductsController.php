@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\SysStatic;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -16,7 +17,8 @@ class ProductsController extends Controller
     {
         $pro=Product::where('category_id',1)->get();
         $pro1=Product::where('category_id',2)->get();
-        return view("frontend.category",compact('pro','pro1'));
+        $sys_s=SysStatic::where('id',5)->get();
+        return view("frontend.category",compact('pro','pro1',"sys_s"));
     }
 
     /**

@@ -16,7 +16,8 @@ class ContactUsController extends Controller
     {
         //
         $sys=SysStatic::where('id',4)->get();
-        return view("frontend.contactus",compact("sys"));
+        $sys_s=SysStatic::where('id',5)->get();
+        return view("frontend.contactus",compact("sys","sys_s"));
     }
 
     /**

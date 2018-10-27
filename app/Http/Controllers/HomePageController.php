@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\SysStatic;
 use Illuminate\Http\Request;
 
 class HomePageController extends Controller
@@ -15,9 +16,10 @@ class HomePageController extends Controller
     public function index()
     {
         //
-        $pro=Product::all();
-
-        return view("frontend.homepage.homepage",compact("pro"));
+        $pro=Product::all()->take(3);
+        $pros=Product::all()->take(12);
+        $sys_s=SysStatic::where('id',5)->get();
+        return view("frontend.homepage.homepage",compact("pro","sys_s","pros"));
     }
 
     /**

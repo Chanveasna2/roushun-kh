@@ -17,9 +17,9 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->integer('category_id')->unsigned()->index();
-            $table->string('pro_name',50);
+            $table->string('pro_name',255);
             $table->string('pro_code',20)->nullable();
-            $table->string('desc',200)->nullable();
+            $table->string('desc',2500)->nullable();
             $table->double('prices',10)->nullable();
             $table->boolean('isPop',1)->default(0);
             $table->timestamps();

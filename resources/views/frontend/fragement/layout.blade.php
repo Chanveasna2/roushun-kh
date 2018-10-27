@@ -84,12 +84,11 @@
                     {{--</ul>--}}
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h5>អាសយដ្ឋាន៖</h5>
-                    <p style="color: white;">អាសយដ្ឋាន៖ សង្កាត់ គីឡូម៉ែត្រលេខ៦
-
-                        ខណ្ឌ ឬស្សីកែវ រាជធានីភ្នំពេញ</p>
-                    <p style="color: white;">លេខទូរស័ព្ទ: 010 463 463​ /
-                        016 475 799</p>
+                    @foreach($sys_s as $sys)
+                    <h5>{{$sys->static_value_first}}៖</h5>
+                    <p style="color: white;">{{$sys->static_value_second}}</p>
+                    <p style="color: white;">{{$sys->static_value_third}}</p>
+                        @endforeach
                 </div>
             </div>
             <div class="row">

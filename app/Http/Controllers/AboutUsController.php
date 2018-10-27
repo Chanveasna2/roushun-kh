@@ -18,7 +18,8 @@ class AboutUsController extends Controller
         $sys_static= SysStatic::where('id',1)->get();
         $sys_static2= SysStatic::where('id',2)->get();
         $sys_static3= SysStatic::where('id',3)->get();
-        return view("frontend.aboutus",compact("sys_static","sys_static2","sys_static3"));
+        $sys_s=SysStatic::where('id',5)->get();
+        return view("frontend.aboutus",compact("sys_static","sys_static2","sys_static3","sys_s"));
     }
 
     /**
