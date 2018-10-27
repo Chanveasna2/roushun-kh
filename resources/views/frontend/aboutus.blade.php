@@ -6,7 +6,7 @@
             <div class="col-md-7">
                 @foreach($sys_static as $sys_statics)
                 <h4 class="title">{{$sys_statics->static_name}}</h4>
-                <p class="about_company">{{$sys_statics->static_value}}</p>
+                <p class="about_company">{{$sys_statics->static_value_first}}</p>
 
             </div>
             <div class="col-md-5" id="about1">
@@ -24,11 +24,11 @@
             <div class="col-md-7">
 
                 <h4 class="title" id="title_vision">{{$sys_statics->static_name}}</h4>
-                <p class="vision">{{$sys_statics->static_value}}</p>
+                <p class="vision">{{$sys_statics->static_value_first}}</p>
                 @endforeach
                     @foreach($sys_static3 as $sys_statics)
                     <h4 class="title">{{$sys_statics->static_name}}</h4>
-                <p class="mission">{{$sys_statics->static_value}}</p>
+                <p class="mission">{{$sys_statics->static_value_first}}</p>
                     @endforeach
             </div>
         </div>

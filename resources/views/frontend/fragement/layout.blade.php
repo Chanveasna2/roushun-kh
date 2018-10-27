@@ -67,12 +67,12 @@
     <section id="footer" >
         <div class="container" >
             <div class="row text-center text-xs-center text-sm-left text-md-left">
-                <div class="col-xs-12 col-sm-4 col-md-4">
+                <!-- <div class="col-xs-12 col-sm-4 col-md-4">
                     <h5>ព័ត៌មានថ្មីៗ & សេចក្តីប្រកាស</h5>
                     <p style="color: white;">បច្ចុប្បន្នពុំទាន់មានព័ត៌មានថ្មីៗនោះទេ
                         សូមចូលមកមើលម្តងទៀតនៅពេលខាងមុខនេះ។</p>
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-4">
+                </div> -->
+                <div class="col-xs-12 col-sm-6 col-md-6">
                     <h5>អំពីក្រុមហ៊ុន</h5>
                     <p style="color: white;">Rouhun Cambodia.</p>
                     {{--<ul class="list-unstyled quick-links">--}}
@@ -83,7 +83,7 @@
                         {{--<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>--}}
                     {{--</ul>--}}
                 </div>
-                <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="col-xs-12 col-sm-6 col-md-6">
                     <h5>អាសយដ្ឋាន៖</h5>
                     <p style="color: white;">អាសយដ្ឋាន៖ សង្កាត់ គីឡូម៉ែត្រលេខ៦
 

@@ -14,7 +14,9 @@
                 <div class="col-md-7"​​ id="contact2">
                     @foreach($sys as $sys)
                     <h3 class="title">{{$sys->static_name}}</h3>
-                    <p>{{$sys->static_value}}</p>
+                    <p><b>{{$sys->static_value_first}}</b></p>
+                    <p>{{$sys->static_value_second}}</p>
+                    <p>{{$sys->static_value_third}}</p>
 
                         @endforeach
                 </div>
