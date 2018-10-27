@@ -12,11 +12,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7"​​ id="contact2">
-                    <h3 class="title">ទំនាក់ទំនង</h3>
-                    <p><b>Roushun Cambodia</b><br/>
-                        អាសយដ្ឋាន៖ សង្កាត់ គីឡូម៉ែត្រលេខ៦ ខណ្ឌ ឬស្សីកែវ រាជធានីភ្នំពេញ</p>
+                    @foreach($sys as $sys)
+                    <h3 class="title">{{$sys->static_name}}</h3>
+                    <p>{{$sys->static_value}}</p>
 
-                     <p>លេខទូរស័ព្ទ: 010 463 463​ / 016 475 799</p>
+                        @endforeach
                 </div>
 
                 <div class="col-md-5" id="contact2">

@@ -30,8 +30,29 @@
             </div>
 
             <div class="form-group">
-                {!! Form::label('static_value','Static Value:') !!}
-                {!! Form::text('static_value',null,['class'=>'form-control']) !!}
+                {!! Form::label('static_value_first','Static Value:') !!}
+                {!! Form::text('static_value_first',null,['class'=>'form-control']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('static_value_second','Static Values:') !!}
+                {!! Form::text('static_value_second',null,['class'=>'form-control']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('static_value_third','Static Values:') !!}
+                {!! Form::text('static_value_third',null,['class'=>'form-control']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('static_value_forth','Static Values:') !!}
+                {!! Form::text('static_value_forth',null,['class'=>'form-control']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('photo_id','Photo:') !!}
+                {!! Form::file('photo_id',null,['class'=>'form-control']) !!}
+                <img src="{{$sys_statics->photo?$sys_statics->photo->file:'https://via.placeholder.com/400x400'}}" alt="" class=" img-rounded" height="100px">
             </div>
 
             <div class="form-group">

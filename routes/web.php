@@ -17,15 +17,11 @@ Route::get('/about-products',function (){
 });
 Route::get('/product-category','ProductsController@index');
 
-Route::get('/about-us',function (){
-    return view("frontend.aboutus");
-});
+Route::get('/about-us','AboutUsController@index');
 Route::get('/distribution-network',function (){
     return view("frontend.distribution");
 });
-Route::get('/contact-us',function (){
-    return view("frontend.contactus");
-});
+Route::get('/contact-us','ContactUsController@index');
 
 Route::group(['middleware'=>'IsAdmin'], function (){
 

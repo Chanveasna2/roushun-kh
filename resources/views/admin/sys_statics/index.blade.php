@@ -22,7 +22,11 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Static Name</th>
-                <th scope="col">Static Value</th>
+                <th scope="col">Static Value1</th>
+                <th scope="col">Static Value2</th>
+                <th scope="col">Static Value3</th>
+                <th scope="col">Static Value4</th>
+                <th scope="col">File</th>
                 <th scope="col">Created</th>
                 <th scope="col">Updated</th>
                 <th scope="col">Action</th>
@@ -34,7 +38,11 @@
                 <tr>
                     <th scope="row">{{$sys_static->id}}</th>
                     <td>{{$sys_static->static_name}}</td>
-                    <td>{{$sys_static->static_value}}</td>
+                    <td>{{str_limit($sys_static->static_value_first,10)}}</td>
+                    <td>{{str_limit($sys_static->static_value_second,10)}}</td>
+                    <td>{{str_limit($sys_static->static_value_third,10)}}</td>
+                    <td>{{str_limit($sys_static->static_value_forth,10)}}</td>
+                    <td><img height="50px;" src="{{$sys_static->photo?$sys_static->photo->file:'https://via.placeholder.com/400x400'}}" alt=""></td>
                     <td>{{$sys_static->created_at->diffForHumans()}}</td>
                     <td>{{$sys_static->updated_at}}</td>
                     <td>

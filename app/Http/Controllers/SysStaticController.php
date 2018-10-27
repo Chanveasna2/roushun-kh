@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Photo;
 use App\SysStatic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -48,9 +49,20 @@ class SysStaticController extends Controller
         //
         $input = $request->all();
 
+        if($file = $request->file('photo_id'))
+        {
+            $name = time()  .$file->getClientOriginalName();
+
+            $file->move('images',$name);
+
+            $photo = Photo::create(['file'=>$name]);
+
+            $input['photo_id'] = $photo->id;
+        }
+
         SysStatic::create($input);
 
-        return redirect('admin/sys_statics');
+        return redirect('/admin/sys_statics');
     }
 
     /**
@@ -92,6 +104,18 @@ class SysStaticController extends Controller
 
         $input =$request->all();
 
+        if($file = $request->file('photo_id'))
+        {
+            $name = time()  .$file->getClientOriginalName();
+
+            $file->move('images',$name);
+
+            $photo = Photo::create(['file'=>$name]);
+
+            $input['photo_id'] = $photo->id;
+
+        }
+
         $sys_statics->update($input);
 
         return redirect('admin/sys_statics');
@@ -108,6 +132,8 @@ class SysStaticController extends Controller
     {
         //
         $sys_statics = SysStatic::findOrFail($id);
+
+        unlink(public_path().$sys_statics->photo->file );
 
         $sys_statics->delete();
 

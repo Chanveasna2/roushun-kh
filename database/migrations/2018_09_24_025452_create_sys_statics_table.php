@@ -16,7 +16,10 @@ class CreateSysStaticsTable extends Migration
         Schema::create('sys_statics', function (Blueprint $table) {
             $table->increments('id');
             $table->string('static_name',50);
-            $table->string('static_value',250);
+            $table->string('static_value_first',2500)->nullable();
+            $table->string('static_value_second',2500)->nullable();
+            $table->string('static_value_third',2500)->nullable();
+            $table->string('static_value_forth',2500)->nullable();
             $table->timestamps();
         });
     }
