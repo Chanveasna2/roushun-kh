@@ -8,22 +8,22 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="index.blade.php">Dashboard</a>
+                <a href="#">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Blank Page</li>
+            <li class="breadcrumb-item active">Static list</li>
         </ol>
         @if(Session::has('deleted_user'))
                 <p class="bg-danger">{{session('deleted_user')}}</p>
             @endif
         <!-- Page Content -->
-        <a href="{{route('sys_statics.create')}}" class="color:white;"><button class="btn btn-primary">Create</button></a>
+        <a href="{{route('sys_statics.create')}}" class="color:white;"><button class="btn btn-primary">Add new</button></a>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable">
-                    <thead class="">
+                <table class="table" id="dataTable">
+                    <thead  class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">S Name</th>
+                        <th scope="col">Name</th>
                         <th scope="col">Value1</th>
                         <th scope="col">Value2</th>
                         <th scope="col">Value3</th>
@@ -32,7 +32,7 @@
                         <th scope="col">Created</th>
                         <th scope="col">Updated</th>
                         <th scope="col">Action</th>
-                        <th scope="col"></th>
+                        {{--<th scope="col"></th>--}}
                     </tr>
                     </thead>
                     <tbody>
@@ -51,14 +51,14 @@
                                 <a href="{{route('sys_statics.edit',$sys_static->id)}}"><i class="btn btn-primary fas fa-edit"></i></a>
 
                             </td>
-                            <td>
-                                {!! Form::open(['method'=>'DELETE','action'=>['SysStaticController@destroy',$sys_static->id]]) !!}
-                                <div class="form-group ">
+                            {{--<td>--}}
+                                {{--{!! Form::open(['method'=>'DELETE','action'=>['SysStaticController@destroy',$sys_static->id]]) !!}--}}
+                                {{--<div class="form-group ">--}}
                                     {{--{!! Form::submit('',['class'=>'btn btn-danger fas fa-edit']) !!}--}}
-                                    <button class="btn btn-danger fas fa-trash-alt" type="submit" value=""></button>
-                                </div>
-                                {!! Form::close() !!}
-                            </td>
+                                    {{--<button class="btn btn-danger fas fa-trash-alt" type="submit" value=""></button>--}}
+                                {{--</div>--}}
+                                {{--{!! Form::close() !!}--}}
+                            {{--</td>--}}
                         </tr>
                         @endforeach
 

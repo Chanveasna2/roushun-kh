@@ -12,26 +12,26 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="index.blade.php">Dashboard</a>
+                <a href="#">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Blank Page</li>
+            <li class="breadcrumb-item active">Edit static item</li>
         </ol>
 
         <!-- Page Content -->
         @include('includes.form_error')
 
-            <a href="{{route('sys_statics.index')}}" class="color:white;"><button class="btn btn-primary">All User</button></a>
+            <a href="{{route('sys_statics.index')}}" class="color:white;"><button class="btn btn-primary">Return to static list</button></a>
 
-            {!! Form::model($sys_statics ,['method'=>'PATCH', 'action'=> ['SysStaticController@update',$sys_statics->id],'files'=>true]) !!}
+            {!! Form::model($sys_statics ,['method'=>'PATCH','onsubmit'=>"return Validate(this);", 'action'=> ['SysStaticController@update',$sys_statics->id],'files'=>true]) !!}
 
             <div class="form-group">
                 {!! Form::label('static_name','Static Name:') !!}
-                {!! Form::text('static_name',null,['class'=>'form-control']) !!}
+                {!! Form::text('static_name',null,['class'=>'form-control','required','maxlength'=>'50']) !!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('static_value_first','Static Value:') !!}
-                {!! Form::text('static_value_first',null,['class'=>'form-control']) !!}
+                {!! Form::text('static_value_first',null,['class'=>'form-control','required']) !!}
             </div>
 
             <div class="form-group">
@@ -55,18 +55,27 @@
                 <img src="{{$sys_statics->photo?$sys_statics->photo->file:'https://via.placeholder.com/400x400'}}" alt="" class=" img-rounded" height="100px">
             </div>
 
+            <div class="alert alert-danger" role="alert" style="display: none" id="validfile">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>Warning</strong> You can upload file extension ".jpg", ".jpeg", ".bmp", ".gif", ".png" only!!!
+            </div>
+            <div class="alert alert-danger" role="alert" style="display: none" id="SizeFile">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>Warning</strong> You can not upload file size more than 3MB!!!
+            </div>
+
             <div class="form-group">
                 {!! Form::submit('Confirm',['class'=>'btn btn-primary']) !!}
             </div>
 
 
-            {!! Form::close() !!}
+            {{--{!! Form::close() !!}--}}
 
-            {!! Form::open(['method'=>'DELETE','action'=>['SysStaticController@destroy',$sys_statics->id]]) !!}
-                <div class="form-group">
-                    {!! Form::submit('DELETE',['class'=>'btn btn-danger']) !!}
-                </div>
-            {!! Form::close() !!}
+            {{--{!! Form::open(['method'=>'DELETE','action'=>['SysStaticController@destroy',$sys_statics->id]]) !!}--}}
+                {{--<div class="form-group">--}}
+                    {{--{!! Form::submit('DELETE',['class'=>'btn btn-danger']) !!}--}}
+                {{--</div>--}}
+            {{--{!! Form::close() !!}--}}
 
     </div>
     <!-- /.container-fluid -->

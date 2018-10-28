@@ -6,20 +6,20 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="index.blade.php">Dashboard</a>
+                <a href="#">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Blank Page</li>
+            <li class="breadcrumb-item active">List of slide show</li>
         </ol>
         @if(Session::has('deleted_user'))
 
             <p class="bg-danger">{{session('deleted_user')}}</p>
     @endif
     <!-- Page Content -->
-        <a href="{{route('slide_shows.create')}}" class="color:white;"><button class="btn btn-primary">Create</button></a>
+        <a href="{{route('slide_shows.create')}}" class="color:white;"><button class="btn btn-primary">Add new</button></a>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable">
-                    <thead>
+                <table class="table" id="dataTable">
+                    <thead  class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Slide Name</th>
@@ -27,8 +27,8 @@
                         <th scope="col">Image</th>
                         <th scope="col">Created</th>
                         <th scope="col">Updated</th>
-                        <th scope="col">Action</th>
-                        <th scope="col"></th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
                     </tr>
                     </thead>
                     <tbody>

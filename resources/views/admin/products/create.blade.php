@@ -8,45 +8,47 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="/admin/products">Product</a>
+                <a href="#">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">create</li>
+            <li class="breadcrumb-item active">Add new product</li>
         </ol>
 
         <!-- Page Content -->
         @include('includes.form_error')
-        <a href="{{route('products.index')}}" class="color:white;"><button class="btn btn-primary">All SYS STATIC</button></a>
 
-        {!! Form::open(['method'=>'POST', 'action'=> 'ProductController@store','files'=>true]) !!}
+
+        <a href="{{route('products.index')}}" class="color:white;"><button class="btn btn-primary">Return to products list</button></a>
+
+        {!! Form::open(['method'=>'POST','onsubmit'=>"return Validate(this);" , 'action'=> 'ProductController@store','files'=>true]) !!}
 
                 <div class="form-group">
                     {!! Form::label('pro_name','Product Name:') !!}
-                    {!! Form::text('pro_name',null,['class'=>'form-control']) !!}
+                    {!! Form::text('pro_name',null,['class'=>'form-control','required','maxlength'=>'50']) !!}
                 </div>
 
                 <div class="form-group">
                     {!! Form::label('pro_code','Product Code:') !!}
-                    {!! Form::text('pro_code',null,['class'=>'form-control']) !!}
-                </div>
-
-                <div class="form-group">
-                    {!! Form::label('desc','Description:') !!}
-                    {!! Form::text('desc',null,['class'=>'form-control']) !!}
+                    {!! Form::text('pro_code',null,['class'=>'form-control','maxlength'=>'20']) !!}
                 </div>
 
                 <div class="form-group">
                     {!! Form::label('prices','Price:') !!}
-                    {!! Form::text('prices',null,['class'=>'form-control']) !!}
+                    {!! Form::number('prices',null,['class'=>'form-control','required']) !!}
                 </div>
 
                 <div class="form-group">
                     {!! Form::label('category_id','Category:') !!}
-                    {!! Form::select('category_id',[''=>'Choose Option'] + $category->pluck('category_name','id')->toArray(),null,['class'=>'form-control']) !!}
+                    {!! Form::select('category_id',[''=>'--Select--'] + $category->pluck('category_name','id')->toArray(),null,['class'=>'form-control','required']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('isPop','Popular:') !!}
-                    {!! Form::text('isPop',null,['class'=>'form-control']) !!}
+                    {!! Form::label('isPop','is it the popular product?') !!}
+                    {!! Form::select('isPop',[''=>'--Select--'] +  array('1' => 'Yes', '0' => 'No'),null,['class'=>'form-control','required']) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('desc','Description:') !!}
+                    {!! Form::textarea('desc',null,['class'=>'form-control','required','maxlength'=>'300']) !!}
                 </div>
 
                 <div class="form-group">
@@ -54,8 +56,18 @@
                     {!! Form::file('photo_id',null,['class'=>'form-control']) !!}
                 </div>
 
+                <div class="alert alert-danger" role="alert" style="display: none" id="validfile">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <strong>Warning</strong> You can upload file extension ".jpg", ".jpeg", ".bmp", ".gif", ".png" only!!!
+                </div>
+                <div class="alert alert-danger" role="alert" style="display: none" id="SizeFile">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <strong>Warning</strong> You can not upload file size more than 3MB!!!
+                </div>
 
-                <div class="form-group">
+
+
+                 <div class="form-group">
                     {!! Form::submit('Create',['class'=>'btn btn-primary']) !!}
                 </div>
 
@@ -64,4 +76,6 @@
 
     </div>
     <!-- /.container-fluid -->
+
+
 @stop

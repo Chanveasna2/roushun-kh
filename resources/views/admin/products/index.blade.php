@@ -8,61 +8,66 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="/admin/products">Product</a>
+                <a href="#">Dashboard</a>
             </li>
-            {{--<li class="breadcrumb-item active">Blank Page</li>--}}
+            <li class="breadcrumb-item active">List of product</li>
         </ol>
         @if(Session::has('deleted_user'))
                 <p class="bg-danger">{{session('deleted_user')}}</p>
             @endif
         <!-- Page Content -->
-        <a href="{{route('products.create')}}" class="color:white;"><button class="btn btn-primary">Create</button></a>
-        <table class="table">
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Product Name</th>
-                <th scope="col">By User</th>
-                <th scope="col">Product Code</th>
-                <th scope="col">Description</th>
-                <th scope="col">Prices</th>
-                <th scope="col">Category</th>
-                <th scope="col">Popular</th>
-                <th scope="col">Images</th>
-                <th scope="col">Action</th>
-                <th scope="col"></th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($products as $product)
-                <tr>
-                    <th scope="row">{{$product->id}}</th>
-                    <td>{{$product->pro_name}}</td>
-                    <td>{{$product->user->name}}</td>
-                    <td>{{$product->pro_code}}</td>
-                    <td>{{str_limit($product->desc,20)}}</td>
-                    <td>${{$product->prices}}</td>
-                    <td>{{$product->category->category_name}}</td>
-                    <td>{{$product->isPop}}</td>
-                    <td><img height="50px;" src="{{$product->photo?$product->photo->file:'https://via.placeholder.com/400x400'}}" alt=""></td>
+        <a href="{{route('products.create')}}" class="color:white;"><button class="btn btn-primary">Add new</button></a>
 
-                    <td>
-                        <a href="{{route('products.edit',$product->id)}}"><i class="btn btn-primary fas fa-edit"></i></a>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table" id="dataTable">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Booking by</th>
+                        <th scope="col">Product Code</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Prices</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Popular</th>
+                        <th scope="col">Images</th>
+                        <th scope="col">Action</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($products as $product)
+                        <tr>
+                            <th scope="row">{{$product->id}}</th>
+                            <td>{{$product->pro_name}}</td>
+                            <td>{{$product->user->name}}</td>
+                            <td>{{$product->pro_code}}</td>
+                            <td>{{str_limit($product->desc,20)}}</td>
+                            <td>${{$product->prices}}</td>
+                            <td>{{$product->category->category_name}}</td>
+                            <td>{{$product->isPop}}</td>
+                            <td><img height="50px;" src="{{$product->photo?$product->photo->file:'https://via.placeholder.com/400x400'}}" alt=""></td>
 
-                    </td>
-                    <td>
-                        {!! Form::open(['method'=>'DELETE','action'=>['ProductController@destroy',$product->id]]) !!}
-                        <div class="form-group ">
-                            {{--{!! Form::submit('',['class'=>'btn btn-danger fas fa-edit']) !!}--}}
-                            <button class="btn btn-danger fas fa-trash-alt" type="submit" value=""></button>
-                        </div>
-                        {!! Form::close() !!}
-                    </td>
-                </tr>
-                @endforeach
+                            <td>
+                                <a href="{{route('products.edit',$product->id)}}"><i class="btn btn-primary fas fa-edit"></i></a>
 
-            </tbody>
-        </table>
+                            </td>
+                            <td>
+                                {!! Form::open(['method'=>'DELETE','action'=>['ProductController@destroy',$product->id]]) !!}
+                                <div class="form-group ">
+                                    {{--{!! Form::submit('',['class'=>'btn btn-danger fas fa-edit']) !!}--}}
+                                    <button class="btn btn-danger fas fa-trash-alt" type="submit" value=""></button>
+                                </div>
+                                {!! Form::close() !!}
+                            </td>
+                        </tr>
+                        @endforeach
+
+                    </tbody>
+               </table>
+            </div>
+        </div>
 
 
     </div>

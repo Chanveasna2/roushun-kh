@@ -1,127 +1,167 @@
-{{--@extends('layouts.app')--}}
-
-{{--@section('content')--}}
-{{--<div class="container">--}}
-    {{--<div class="row justify-content-center">--}}
-        {{--<div class="col-md-8">--}}
-            {{--<div class="card">--}}
-                {{--<div class="card-header">{{ __('Login') }}</div>--}}
-
-                {{--<div class="card-body">--}}
-                    {{--<form method="POST" action="{{ route('login') }}">--}}
-                        {{--@csrf--}}
-
-                        {{--<div class="form-group row">--}}
-                            {{--<label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>--}}
-
-                            {{--<div class="col-md-6">--}}
-                                {{--<input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>--}}
-
-                                {{--@if ($errors->has('email'))--}}
-                                    {{--<span class="invalid-feedback" role="alert">--}}
-                                        {{--<strong>{{ $errors->first('email') }}</strong>--}}
-                                    {{--</span>--}}
-                                {{--@endif--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
-                        {{--<div class="form-group row">--}}
-                            {{--<label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>--}}
-
-                            {{--<div class="col-md-6">--}}
-                                {{--<input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>--}}
-
-                                {{--@if ($errors->has('password'))--}}
-                                    {{--<span class="invalid-feedback" role="alert">--}}
-                                        {{--<strong>{{ $errors->first('password') }}</strong>--}}
-                                    {{--</span>--}}
-                                {{--@endif--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
-                        {{--<div class="form-group row">--}}
-                            {{--<div class="col-md-6 offset-md-4">--}}
-                                {{--<div class="form-check">--}}
-                                    {{--<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>--}}
-
-                                    {{--<label class="form-check-label" for="remember">--}}
-                                        {{--{{ __('Remember Me') }}--}}
-                                    {{--</label>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
-                        {{--<div class="form-group row mb-0">--}}
-                            {{--<div class="col-md-8 offset-md-4">--}}
-                                {{--<button type="submit" class="btn btn-primary">--}}
-                                    {{--{{ __('Login') }}--}}
-                                {{--</button>--}}
-
-                                {{--<a class="btn btn-link" href="{{ route('password.request') }}">--}}
-                                    {{--{{ __('Forgot Your Password?') }}--}}
-                                {{--</a>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</form>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-{{--</div>--}}
-{{--@endsection--}}
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <title>Roushun Cambodia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Bootstrap core CSS-->
-    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="/css/login.css" rel="stylesheet"/>
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
 </head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+    main{
+        height: 100vh;
+        background: url(/images/login_bg.png) no-repeat fixed center;
+        background-size: cover;
+    }
+    #container{
+        width: 350px;
+        height: 500px;
+        background: inherit;
+        position: absolute;
+        overflow: hidden;
+        top: 50%;
+        left: 50%;
+        margin-left: -175px;
+        margin-top: -250px;
+        border-radius: 8px;
+    }
+    #container:before{
+        width: 400px;
+        height: 550px;
+        content: "";
+        position: absolute;
+        top: -25px;
+        left: -25px;
+        bottom: 0;
+        right: 0;
+
+        background: inherit;
+        box-shadow: inset 0 0 0 200px rgba(255,255,255,0.2);
+        filter: blur(10px);
+    }
+    form img{
+        width: 120px;
+        height: 120px;
+        border-radius: 100%;
+        margin-top: -10px;
+    }
+    form{
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    input[name="email"]{
+        background: 0;
+        width: 250px;
+
+        border: none;
+        border-bottom: 2px solid rgba(255,255,255, 0.3);
+        margin: 20px 0;
+        padding-bottom: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        color: rgba(255,255,255, 0.8);
+    }
+
+    input[name="password"]{
+        background: 0;
+        width: 250px;
+        border: none;
+        border-bottom: 2px solid rgba(255,255,255, 0.3);
+        margin: 20px 0;
+        padding-bottom: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        color: rgba(255,255,255, 0.8);
+    }
+    input[type="submit"]{
+        border: 0;
+        width: 250px;
+        border-radius: 8px;
+        padding-bottom: 0;
+        height: 60px;
+        background: #df2359;
+        color: white;
+        cursor: pointer;
+        transition: all 600ms ease-in-out;
+    }
+    input[type="submit"]:hover{
+        background: #C0392B;
+
+    }
+    span a{
+        color: rgba(255,255,255, 0.8);
+    }
+    ::placeholder {
+        color: white;
+        opacity: 1; /* Firefox */
+    }
+
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: white;
+        opacity: 1;
+    }
+
+    ::-ms-input-placeholder { /* Microsoft Edge */
+        color: white;
+        opacity: 1;
+    }
+</style>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <div class="card card-signin my-5">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Sign In</h5>
-                    <form  method="POST" action="{{ route('login') }}">
-                        @csrf
-                        <div class="form-label-group">
-                            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-                            <label for="email">Email address</label>
-                            @if ($errors->has('email'))
-                                <span class="invalid-feedback" role="alert">
+
+<main>
+    {{--<div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">--}}
+
+        {{--<img src="/images/ROUSHUNLOGOwhite.png" style="width: 20%;margin-top: 20px">--}}
+
+        {{--<!--<input id="date" value="" type="text">-->--}}
+        {{--<!--<button onclick="myFunction()">Try it</button>-->--}}
+
+    {{--</div>--}}
+    <div id="container" class="col-sm-12 col-xs-12">
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+            <img src="/images/ROUSHUNLOGOwhite.png" style="margin-top: -30px;margin-bottom: 20px"><br>
+
+
+            <div>
+                <input id="email" name="email" type="email" class="{{ $errors->has('email') ? ' is-invalid' : '' }}"  value="{{ old('email') }}"  required placeholder="Enter email" >
+                {{--<input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>--}}
+                @if ($errors->has('email'))
+                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                            @endif
-                        </div>
+                @endif
+            </div>
+            <div>
+                <input id="password" type="password" class="{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="Enter password">
 
-                        <div class="form-label-group">
-                            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-                            <label for="password">Password</label>
-                            @if ($errors->has('password'))
-                                <span class="invalid-feedback" role="alert">
+                @if ($errors->has('password'))
+                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                            @endif
-                        </div>
-
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                            <label class="custom-control-label" for="customCheck1">Remember password</label>
-                        </div>
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">{{ __('Login') }}</button>
-                        <hr class="my-4">
-                        <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
-                        <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
-                    </form>
-                </div>
+                @endif
             </div>
-        </div>
+
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">{{ __('Login') }}</button>
+
+
+
+        </form>
     </div>
-</div>
-<!-- Bootstrap core JavaScript-->
-<script src="/vendor/jquery/jquery.min.js"></script>
-<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+</main>
 </body>
 </html>
