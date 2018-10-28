@@ -29,6 +29,13 @@ class DatabaseSeeder extends Seeder
             'email'=>'admin@roushun-kh.com',
             'password'=>bcrypt('123123')
         ]);
+        $user = \App\User::create([
+            'name'=>'Admin',
+            'role_id'=>'1',
+            'isActive'=>'1',
+            'email'=>'soklimkheng@roushun-kh.com',
+            'password'=>bcrypt('123123')
+        ]);
 
         $category = Category::create([
            'category_name'=>'Shampoo',
@@ -118,6 +125,23 @@ class DatabaseSeeder extends Seeder
         ]);
         $photos = \App\Photo::create([
             'file' => 'honey.png'
+        ]);
+
+        $user = \App\User::create([
+            'name'=>'Dom',
+            'role_id'=>'2',
+            'isActive'=>'1',
+            'email'=>'director@roushun-kh.com',
+            'password'=>bcrypt('123123'),
+            'photo_id'=>'4'
+        ]);
+        $user = \App\User::create([
+            'name'=>'Jimmy',
+            'role_id'=>'2',
+            'isActive'=>'1',
+            'email'=>'manager@roushun-kh.com',
+            'password'=>bcrypt('123123'),
+            'photo_id'=>'3'
         ]);
     }
 }

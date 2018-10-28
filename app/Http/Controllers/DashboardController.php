@@ -12,14 +12,14 @@ class DashboardController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
+    public function index()
+    {
 
         $user = Auth::user();
-        if (!$user->isAdmin()){
+        if ($user) {
 
-            return redirect('/');
+            return view('admin.index');
         }
-        return view('admin.index');
     }
 }
 

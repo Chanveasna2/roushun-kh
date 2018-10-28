@@ -32,7 +32,9 @@
                         <th scope="col">Created</th>
                         <th scope="col">Updated</th>
                         <th scope="col">Action</th>
-                        {{--<th scope="col"></th>--}}
+                        @if(Auth::user()->role->name=='Admin')
+                            <th scope="col"></th>
+                        @endif
                     </tr>
                     </thead>
                     <tbody>
@@ -51,14 +53,15 @@
                                 <a href="{{route('sys_statics.edit',$sys_static->id)}}"><i class="btn btn-primary fas fa-edit"></i></a>
 
                             </td>
-                            {{--<td>--}}
-                                {{--{!! Form::open(['method'=>'DELETE','action'=>['SysStaticController@destroy',$sys_static->id]]) !!}--}}
-                                {{--<div class="form-group ">--}}
-                                    {{--{!! Form::submit('',['class'=>'btn btn-danger fas fa-edit']) !!}--}}
-                                    {{--<button class="btn btn-danger fas fa-trash-alt" type="submit" value=""></button>--}}
-                                {{--</div>--}}
-                                {{--{!! Form::close() !!}--}}
-                            {{--</td>--}}
+                            @if(Auth::user()->role->name=='Admin')
+                                <td>
+                                    {!! Form::open(['method'=>'DELETE','action'=>['SysStaticController@destroy',$sys_static->id]]) !!}
+                                    <div class="form-group ">
+                                        <button class="btn btn-danger fas fa-trash-alt" type="submit" value=""></button>
+                                    </div>
+                                    {!! Form::close() !!}
+                                </td>
+                            @endif
                         </tr>
                         @endforeach
 

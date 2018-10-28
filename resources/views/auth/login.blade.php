@@ -134,7 +134,7 @@
     <div id="container" class="col-sm-12 col-xs-12">
         <form method="POST" action="{{ route('login') }}">
             @csrf
-            <img src="/images/ROUSHUNLOGOwhite.png" style="margin-top: -30px;margin-bottom: 20px"><br>
+            <img src="/images/roushunb.jpg" style="margin-top: -30px;margin-bottom: 20px"><br>
 
 
             <div>
