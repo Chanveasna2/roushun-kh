@@ -1,6 +1,9 @@
 
 <?php
 use App\SysStatic;
+use Illuminate\Support\Facades\Input as input;
+use App\User;
+
 Route::get('/404error',function (){
     return view('admin.errors.error404');
 });
@@ -54,5 +57,24 @@ Route::group(['middleware'=>'IsAdmin'], function (){
 
 
 });
+Route::get('/admin/profile',function (){
+    return view('auth.profile');
+});
+Route::get('/changepassword','ChangePasswordController@index');
+
+Route::post('change/password',function (){
+    $users = User::find(Auth::user()->id);
+
+    if(Hash::check(Input::get('passwordOld'),$users['password']) && Input::get('password') == Input::get('password_confirmation')){
+        $users->password = bcrypt(Input::get('password'));
+        $users->save();
+        return redirect('/admin/profile')->with('success','Password Changed');
+    }else{
+        return back()->with('error','Something went wrong!');
+    }
+
+});
+
+
 
 

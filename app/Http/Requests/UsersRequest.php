@@ -27,7 +27,7 @@ class UsersRequest extends FormRequest
             //
             'name'=>'required',
             'email'=>'required',
-            'password'=>'required',
+//            'password'=>'required',
             'role_id'=>'required',
             'isActive'=>'required',
             'file'  => 'size:max:500000',

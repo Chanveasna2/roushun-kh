@@ -34,10 +34,10 @@
                 {!! Form::email('email',null,['class'=>'form-control','required','maxlength'=>'50']) !!}
             </div>
 
-            <div class="form-group">
-                {!! Form::label('password','Password:') !!}
-                {!! Form::password('password',['class'=>'form-control','required','maxlength'=>'50']) !!}
-            </div>
+            {{--<div class="form-group">--}}
+                {{--{!! Form::label('password','Password:') !!}--}}
+                {{--{!! Form::password('password',['class'=>'form-control','required','maxlength'=>'50']) !!}--}}
+            {{--</div>--}}
 
             <div class="form-group">
                 {!! Form::label('role_id','Role:') !!}
