@@ -33,6 +33,17 @@
                 </div>
 
                 <div class="form-group">
+                    {!! Form::label('order','Order:') !!}
+                    {!! Form::text('order',null,['class'=>'form-control','required','maxlength'=>'1']) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('photo_id','Photo:') !!}
+                    {!! Form::file('photo_id',null,['class'=>'form-control','required']) !!}
+                    <img src="{{$promotions->photo?$promotions->photo->file:'https://via.placeholder.com/400x400'}}" alt="" class=" img-rounded" height="100px">
+                </div>
+
+                <div class="form-group">
                     {!! Form::submit('Confirm',['class'=>'btn btn-primary']) !!}
                 </div>
 

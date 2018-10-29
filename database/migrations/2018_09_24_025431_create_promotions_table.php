@@ -18,6 +18,7 @@ class CreatePromotionsTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->string('promo_name',50);
             $table->string('desc',255)->nullable();
+            $table->string('order')->nullable();
             $table->timestamps();
         });
     }

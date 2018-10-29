@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Promotion;
 use App\User;
+use App\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -55,10 +56,23 @@ class PromotionController extends Controller
 
         $input = $request->all();
 
+        if($file = $request->file('photo_id'))
+        {
+            $name = time()  .$file->getClientOriginalName();
+
+            $file->move('images',$name);
+
+            $photo = Photo::create(['file'=>$name]);
+
+            $input['photo_id'] = $photo->id;
+        }
+
+
 
         $user->promotions()->create($input);
 
 //        return $request->all();
+
         return redirect('/admin/promotions');
     }
 
@@ -101,6 +115,18 @@ class PromotionController extends Controller
         $promotions = Promotion::findOrFail($id);
 
         $input = $request->all();
+
+        if($file = $request->file('photo_id'))
+        {
+            $name = time()  .$file->getClientOriginalName();
+
+            $file->move('images',$name);
+
+            $photo = Photo::create(['file'=>$name]);
+
+            $input['photo_id'] = $photo->id;
+
+        }
 
         $promotions->update($input);
 

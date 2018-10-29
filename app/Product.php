@@ -15,7 +15,8 @@ class Product extends Model
         'prices',
         'category_id',
         'isPop',
-        'photo_id'
+        'photo_id',
+        'order'
 
     ];
 

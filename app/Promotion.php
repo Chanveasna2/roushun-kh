@@ -10,7 +10,10 @@ class Promotion extends Model
     protected $fillable=[
 
         'promo_name',
-        'desc'
+        'desc',
+        'photo_id',
+        'user_id',
+        'order'
 
     ];
 
@@ -18,5 +21,9 @@ class Promotion extends Model
     public function user(){
         return $this->belongsTo('app\User','user_id');
     }
+    public function photo(){
+        return $this->belongsTo('App\Photo','photo_id');
+    }
+
 }
 

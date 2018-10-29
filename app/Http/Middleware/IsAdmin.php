@@ -21,7 +21,7 @@ class IsAdmin
         $user = Auth::user();
         if(auth()->check()) {
             if (!$user->isAdmin()) {
-                return redirect('/admin');
+                return redirect('/404error');
             } else {
                 return $next($request);
             }

@@ -63,19 +63,19 @@
                 <a href="#" class="close" data-dismiss="alert">&times;</a>
                 <strong>Warning</strong> You can not upload file size more than 3MB!!!
             </div>
-        
+
             <div class="form-group">
                 {!! Form::submit('Confirm',['class'=>'btn btn-primary']) !!}
             </div>
 
 
-            {!! Form::close() !!}
+            {{--{!! Form::close() !!}--}}
 
-            {!! Form::open(['method'=>'DELETE','action'=>['AdminUserController@destroy',$users->id]]) !!}
-                <div class="form-group">
-                    {!! Form::submit('DELETE',['class'=>'btn btn-danger']) !!}
-                </div>
-            {!! Form::close() !!}
+            {{--{!! Form::open(['method'=>'DELETE','action'=>['AdminUserController@destroy',$users->id]]) !!}--}}
+                {{--<div class="form-group">--}}
+                    {{--{!! Form::submit('DELETE',['class'=>'btn btn-danger']) !!}--}}
+                {{--</div>--}}
+            {{--{!! Form::close() !!}--}}
 
     </div>
     <!-- /.container-fluid -->

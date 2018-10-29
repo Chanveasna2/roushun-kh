@@ -25,11 +25,12 @@
                     <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Promotion Name</th>
+                        <th scope="col">Pro-Name</th>
                         <th scope="col">Description</th>
-                        <th scope="col">Poster</th>
+                        <th scope="col">File</th>
+                        <th scope="col">Created by</th>
+                        <th scope="col">Order</th>
                         <th scope="col">Created</th>
-                        <th scope="col">Updated</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
                     </tr>
@@ -40,9 +41,10 @@
                             <th scope="row">{{$promotion->id}}</th>
                             <td>{{$promotion->promo_name}}</td>
                             <td>{{$promotion->desc}}</td>
+                            <td><img height="50px;" width="100px" src="{{$promotion->photo?$promotion->photo->file:'https://via.placeholder.com/400x400'}}" alt=""></td>
                             <td>{{$promotion->user->name}}</td>
-                            <td>{{$promotion->created_at->diffForHumans()}}</td>
-                            <td>{{$promotion->updated_at}}</td>
+                            <td>{{$promotion->order}}</td>
+                            <td>{{$promotion->created_at}}</td>
                             <td>
                                 <a href="{{route('promotions.edit',$promotion->id)}}"><i class="btn btn-primary fas fa-edit"></i></a>
 

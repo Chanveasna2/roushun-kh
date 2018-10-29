@@ -27,10 +27,10 @@
                         <th scope="col">Product Name</th>
                         <th scope="col">Booking by</th>
                         <th scope="col">Product Code</th>
-                        <th scope="col">Description</th>
                         <th scope="col">Prices</th>
                         <th scope="col">Category</th>
                         <th scope="col">Popular</th>
+                        <th scope="col">Order</th>
                         <th scope="col">Images</th>
                         <th scope="col">Action</th>
                         <th scope="col"></th>
@@ -43,10 +43,10 @@
                             <td>{{$product->pro_name}}</td>
                             <td>{{$product->user->name}}</td>
                             <td>{{$product->pro_code}}</td>
-                            <td>{{str_limit($product->desc,20)}}</td>
                             <td>${{$product->prices}}</td>
                             <td>{{$product->category->category_name}}</td>
                             <td>{{$product->isPop}}</td>
+                            <td>{{$product->order}}</td>
                             <td><img height="50px;" src="{{$product->photo?$product->photo->file:'https://via.placeholder.com/400x400'}}" alt=""></td>
 
                             <td>

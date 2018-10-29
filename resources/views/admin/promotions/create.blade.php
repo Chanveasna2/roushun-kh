@@ -26,7 +26,18 @@
 
                 <div class="form-group">
                     {!! Form::label('desc','Description:') !!}
-                    {!! Form::text('desc',null,['class'=>'form-control','required','maxlength'=>'255']) !!}
+                    {!! Form::textarea('desc',null,['class'=>'form-control','required','maxlength'=>'255']) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('order','Order:') !!}
+                    {!! Form::text('order',null,['class'=>'form-control','required','maxlength'=>'1']) !!}
+                </div>
+
+
+        <div class="form-group">
+                    {!! Form::label('photo_id','Photo:') !!}
+                    {!! Form::file('photo_id',null,['class'=>'form-control','required']) !!}
                 </div>
 
                 <div class="form-group">

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <title>Roushun Cambodia</title>
+<style>
+    .dropdown:hover .dropdown-menu{display: block;}
+</style>
 
 <head>
 
@@ -10,12 +13,16 @@
 <body>
     <div class="container" style="height: 100px">
         <div class="row" id="header">
+            @foreach($sys_logo as $logo)
             <div id="logo">
-                <a href="/"><img src="/images/logo.png"></a>
+                <a href="/"><img src="{{$logo->photo?$logo->photo->file:'https://via.placeholder.com/400x65'}}"></a>
             </div>
+            @endforeach
+            @foreach($sys_adv as $adv)
             <div id="adv">
-                <img src="/images/adv.gif">
+                <img src="{{$adv->photo?$adv->photo->file:'https://via.placeholder.com/285x30'}}">
             </div>
+            @endforeach
         </div>
     </div><!----end logo----->
 
@@ -34,9 +41,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/about-products')}}">អំពីផលិតផល<span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/product-category') }}">ប្រភេទផលិតផល</a>
+                        <li class="dropdown nav-item">
+                            <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="{{ url('/product-category') }}">ប្រភេទផលិតផល</a>
+                            <ul class="dropdown-menu" style="background-color: #07a7db;margin-top: 0px">
+                                <li class="nav-item"> <a class="nav-link" href="#">សាប៊ូកក់សក់</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">សាប៊ូលាងខ្លួន</a></li>
+
+                            </ul>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/distribution-network')}}">ដៃគូចែកចាយ</a>
                         </li>
@@ -73,15 +86,12 @@
                         សូមចូលមកមើលម្តងទៀតនៅពេលខាងមុខនេះ។</p>
                 </div> -->
                 <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h5>អំពីក្រុមហ៊ុន</h5>
-                    <p style="color: white;">Rouhun Cambodia.</p>
-                    {{--<ul class="list-unstyled quick-links">--}}
-                        {{--<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>--}}
-                        {{--<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>--}}
-                        {{--<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>--}}
-                        {{--<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>--}}
-                        {{--<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>--}}
-                    {{--</ul>--}}
+                    @foreach($sys_footerLeft as $footLeft)
+                        <h5>{{$footLeft->static_name}}</h5>
+                        <a href="{{url('/about-products')}}"><p style="color: white;">{{$footLeft->static_value_first}}</p></a>
+                        <a href="{{url('/about-us')}}" ><p style="color: white;">{{$footLeft->static_value_second}}</p></a>
+                        <a  href="{{url('/distribution-network')}}"><p style="color: white;">{{$footLeft->static_value_third}}</p></a>
+                    @endforeach
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6">
                     @foreach($sys_s as $sys)

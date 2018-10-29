@@ -17,7 +17,6 @@ class SysStatic extends Model
     ];
 
     public function photo(){
-
         return $this->belongsTo('App\Photo','photo_id');
     }
 }

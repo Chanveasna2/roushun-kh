@@ -143,6 +143,30 @@ class DatabaseSeeder extends Seeder
             'password'=>bcrypt('123123'),
             'photo_id'=>'3'
         ]);
+        $sys_static =SysStatic::create([
+            'static_name'=>'Logo(400x65)',
+            'static_value_first'=>'Company Logo',
+            'photo_id'=>'7'
+        ]);
+        $photos = \App\Photo::create([
+            'file' => 'logo_web.png'
+        ]);
+
+        $sys_static =SysStatic::create([
+            'static_name'=>'Adv (285x30)',
+            'static_value_first'=>'Adv banner',
+            'photo_id'=>'8'
+        ]);
+        $photos = \App\Photo::create([
+            'file' => 'advertising_web.gif'
+        ]);
+
+        $sys_static =SysStatic::create([
+            'static_name'=>'Roushun Cambodia',
+            'static_value_first'=>'អំពីផលិតផល',
+            'static_value_second'=>'អំពីក្រុមហ៊ុន',
+            'static_value_third'=>'ដៃគូចែកចាយ'
+        ]);
     }
 }
 
