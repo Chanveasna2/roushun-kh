@@ -81,6 +81,7 @@ class DatabaseSeeder extends Seeder
         $pro=\App\Product::create([
             'pro_name'=>'Roushun Black',
             'user_id'=>1,
+            'desc'=>'រូបមន្តចិញ្ចឹមស្បែកក្បាលនិងធ្វើឲ្យសក់របស់អ្នកស្រស់ស្អាតដែលធ្វើឲ្យវា ស្រស់ស្អាតពីគល់សក់រហូតដល់ចុងសក់ជាមួយនិងសារជាតិចម្រាញ់Keratin និងប្រេងអូលីវរូបមន្ដដែលមានគុណភាពអាចជួសជុលស្បែកក្បាលនៅផ្ទៃសក់ និងផ្ដល់ឲ្យអ្នកនូវសក់ដែលអាចគ្រប់គ្រងបាន និងមានសំណើមដល់ស្បែក និងសក់ក្បាល។',
             'category_id'=>1,
             'pro_code'=>'001',
             'prices'=>5,
@@ -93,6 +94,7 @@ class DatabaseSeeder extends Seeder
         $pro=\App\Product::create([
             'pro_name'=>'Roushun White',
             'user_id'=>1,
+            'desc'=>'បច្ចេកវិទ្យាធ្វើឲ្យសក់រស់រវើកឡើងវិញ។ បច្ចេកទេសរក្សាពណ៌សក់ស្រស់ស្អាត រហូតដល់៨សប្ដាហ៏។ មានរូបមន្ដរួមបញ្ចូលជាមួយ តែបៃតង ផ្កាឈូករ័ត្ន។ ការម៉ាស្សាសក់ក្បាលថ្នមៗដើម្បីជួយបំពេញសំណើមសំខាន់ដល់សក់ និងរក្សាសក់ឲ្យមានសុខភាពល្អ។ ពណ៌សក់របស់លោកអ្នកនឹងមានភាពរស់រវើក និងយូរអង្វែង ខណៈដែលគ្រប់សក់ទាំងអស់ទន់ និងអាចគ្រប់គ្រងបាន។',
             'category_id'=>1,
             'pro_code'=>'002',
             'prices'=>5,
@@ -104,6 +106,7 @@ class DatabaseSeeder extends Seeder
         ]);
         $pro=\App\Product::create([
             'pro_name'=>'Roushun Red',
+            'desc'=>'តើអ្នកចង់បានសក់ដែលភ្លឺរលោងត្រង់ និងងាយស្រួលក្នុងការធ្វើម៉ូតសក់ដែរទេ? ប្រើប្រាស់សាប៊ូកក់សក់ដែលបានបង្កើតជាពិសេសដើម្បីឲ្យសក់របស់អ្នកភ្លឺរលោង ស្រស់ស្អាត និងអាចគ្រប់គ្រងបាន។ ផលិតផលសាប៊ូកក់សក់ ROUSHUN KERATINធ្វើឲ្យភ្លឺរលោងជាមួយនិងបច្ចេកវិទ្យាផ្លាស់ប្ដូរសក់របស់អ្នកធ្វើឲ្យវាកាន់ តែរលោងស្រស់ស្អាតជាមួយភាពត្រជាក់ និងងាយស្រួលក្នុងការធ្វើម៉ូតសក់។',
             'user_id'=>1,
             'category_id'=>1,
             'pro_code'=>'003',
@@ -117,6 +120,7 @@ class DatabaseSeeder extends Seeder
         $pro=\App\Product::create([
             'pro_name'=>'Roushun Honey',
             'user_id'=>1,
+            'desc'=>'ផ្សំចេញពីសារធាតុទឹកឃ្មុំធម្មជាតិ។នៅពេលដែលយើងធ្វើការលាងសម្អាត វានឹងធ្វើឲសក់មានសំណើមយ៉ាងឆាប់រហ័ស រួមទាំងបច្ចេកវិទ្យាបង្កាអង្គែស្បែកក្បាល់ និងប្រឆាំងការជ្រុះសក់។ ផ្ដល់នូវអាហាររូបត្ថម្ភជាច្រើនដល់ស្បែកក្បាល និងសក់ ដូចជាពពួកប្រូតេអ៊ីន និងវិតាមីនជាដើម។ វានឹងផ្ដល់មកវិញនូវសុខភាពដ៍ល្អ មិនមាន អង្គែ ដល់ស្បែកក្បាលដែលនាំនូវអារម្មណ៍រីករាយ និងស្រស់ស្រាយដល់អ្នក។',
             'category_id'=>2,
             'pro_code'=>'004',
             'prices'=>6,
@@ -166,6 +170,37 @@ class DatabaseSeeder extends Seeder
             'static_value_first'=>'អំពីផលិតផល',
             'static_value_second'=>'អំពីក្រុមហ៊ុន',
             'static_value_third'=>'ដៃគូចែកចាយ'
+        ]);
+
+        $promotion1 =\App\Promotion::create([
+            'promo_name'=>'Promotion 1',
+            'desc'=>'1',
+            'order'=>'1',
+            'user_id'=>'1',
+            'photo_id'=>'9',
+        ]);
+        $photos = \App\Photo::create([
+            'file' => 'promotion1.png'
+        ]);
+        $promotion1 =\App\Promotion::create([
+            'promo_name'=>'Promotion 2',
+            'desc'=>'2',
+            'order'=>'2',
+            'user_id'=>'1',
+            'photo_id'=>'10',
+        ]);
+        $photos = \App\Photo::create([
+            'file' => 'promotion2.png'
+        ]);
+        $promotion1 =\App\Promotion::create([
+            'promo_name'=>'Promotion 3',
+            'desc'=>'3',
+            'order'=>'3',
+            'user_id'=>'1',
+            'photo_id'=>'11',
+        ]);
+        $photos = \App\Photo::create([
+            'file' => 'promotion3.png'
         ]);
     }
 }
