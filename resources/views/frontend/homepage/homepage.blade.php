@@ -13,9 +13,11 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
+                    @foreach($slide1 as $slide)
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="/images/rwhite.png" alt="First slide">
+                        <img class="d-block w-100" src="{{$slide->photo?$slide->photo->file :'https://via.placeholder.com/1024x256'}}" alt="{{$slide->slide_name}}">
                     </div>
+                    @endforeach
                     <div class="carousel-item">
                         <img class="d-block w-100" src="/images/rblack.png" alt="Second slide">
                     </div>
@@ -40,7 +42,7 @@
                 @foreach($promotion as $prom)
                 <div class="col-md-4 w-auto">
                     <figure class="imghvr-push-up">
-                            <img src="{{$prom->photo->file}}">
+                            <img  src="{{$prom->photo->file}}" style="width: 303.33px">
                         <figcaption>
                             <img src="{{$prom->photo->file}}" data-toggle="modal" data-target="#cam{{$prom->id}}">
                         </figcaption>
@@ -167,7 +169,7 @@
                                         {{--(10 reviews)--}}
                                     {{--</div>--}}
                                     <p>{{$product->desc}}</p>
-                                    <h3 class="cost"><span class="glyphicon glyphicon-usd"></span>${{$product->prices}}<small class="pre-cost"><span class="glyphicon glyphicon-usd"></span></small></h3>
+                                    <h3 class="cost"><span class="glyphicon glyphicon-usd"></span><b>តម្លៃ ​</b>​​​${{$product->prices}}<small class="pre-cost"><span class="glyphicon glyphicon-usd"></span></small></h3>
                                     {{--<div class="row">--}}
                                         {{--<div class="col-md-4 col-sm-6 col-xs-12">--}}
                                             {{--<select class="form-control" name="select">--}}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\SlideShow;
 use App\SysStatic;
 use Illuminate\Http\Request;
 use App\Promotion;
@@ -25,7 +26,8 @@ class HomePageController extends Controller
         $sys_footerLeft=SysStatic::where('id',8)->get();
         $promotion=Promotion::orderBy('order','asc')->get()->take(3);
         $sys_static= SysStatic::where('id',1)->get();
-        return view("frontend.homepage.homepage",compact("sys_static","promotion","pro","sys_s","pro_popular","sys_logo","sys_adv","sys_footerLeft"));
+        $slide1=SlideShow::where('id',1)->get();
+        return view("frontend.homepage.homepage",compact("slide1","sys_static","promotion","pro","sys_s","pro_popular","sys_logo","sys_adv","sys_footerLeft"));
     }
 
     /**

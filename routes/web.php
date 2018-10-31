@@ -50,6 +50,7 @@ Route::resource('admin/slide_shows','SlideShowController');
 Route::resource('admin/promotions','PromotionController');
 
 
+
 Route::group(['middleware'=>'IsAdmin'], function (){
 
 
@@ -60,7 +61,10 @@ Route::group(['middleware'=>'IsAdmin'], function (){
 Route::get('/admin/profile',function (){
     return view('auth.profile');
 });
-Route::get('/changepassword','ChangePasswordController@index');
+
+Route::resource('/changepassword','ChangePasswordController');
+
+
 
 Route::post('change/password',function (){
     $users = User::find(Auth::user()->id);

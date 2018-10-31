@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Role;
 use Illuminate\Support\Facades\Input as input;
 use App\User;
+use App\Photo;
 
 class ChangePasswordController extends Controller
 {
@@ -64,6 +66,10 @@ class ChangePasswordController extends Controller
     public function edit($id)
     {
         //
+        $users = User::findOrFail($id);
+        $roles = Role::all();
+
+        return view('auth.changeprofile',compact('users','roles'));
     }
 
     /**
@@ -76,6 +82,32 @@ class ChangePasswordController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $user =User::findOrFail($id);
+
+        if(trim($request->password)==''){
+            $input=$request->except('password');
+        }else{
+            $input =$request->all();
+        }
+
+
+        if($file = $request->file('photo_id'))
+        {
+            $name = time()  .$file->getClientOriginalName();
+
+            $file->move('images',$name);
+
+            $photo = Photo::create(['file'=>$name]);
+
+            $input['photo_id'] = $photo->id;
+
+        }
+
+        $input['password'] = bcrypt($request->password);
+
+        $user->update($input);
+
+        return redirect('/admin/profile');
     }
 
     /**

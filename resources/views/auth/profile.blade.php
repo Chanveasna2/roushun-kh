@@ -6,9 +6,8 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="#">Dashboard</a>
+                <a href="#">User Profile</a>
             </li>
-            <li class="breadcrumb-item active">Edit user</li>
         </ol>
         <div class="row">
             <div class="col-md-4">
@@ -24,14 +23,14 @@
                     <input class="form-control" required maxlength="50" name="name" type="text" value="{{Auth::user()->email}}" id="name" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="name">Username:</label>
+                    <label for="name">Role:</label>
                     <input class="form-control" required maxlength="50" name="name" type="text" value="{{Auth::user()->role->name}}" id="name" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="name">Username:</label>
+                    <label for="name">Active:</label>
                     <input class="form-control" required maxlength="50" name="name" type="text" value="{{Auth::user()->isActive}}" id="name" readonly>
                 </div>
-                <a href="{{route('users.edit',Auth::user()->id)}}"><i class="btn btn-primary fas fa-edit"></i></a>
+                <a href="{{route('changepassword.edit',Auth::user()->id)}}"><i class="btn btn-primary fas fa-edit"></i></a>
                 <a href="/changepassword"><i class="btn btn-primary fas fa-edit">Change Password</i></a>
 
                 @if(session('success'))

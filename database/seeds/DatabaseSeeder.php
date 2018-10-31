@@ -202,6 +202,8 @@ class DatabaseSeeder extends Seeder
         $photos = \App\Photo::create([
             'file' => 'promotion3.png'
         ]);
+
+        $this->call(SlideShowSeeder::class);
     }
 }
 
