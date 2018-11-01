@@ -7,6 +7,7 @@ use App\Role;
 use Illuminate\Support\Facades\Input as input;
 use App\User;
 use App\Photo;
+use Illuminate\Support\Facades\Session;
 
 class ChangePasswordController extends Controller
 {
@@ -84,11 +85,9 @@ class ChangePasswordController extends Controller
         //
         $user =User::findOrFail($id);
 
-        if(trim($request->password)==''){
-            $input=$request->except('password');
-        }else{
+
             $input =$request->all();
-        }
+
 
 
         if($file = $request->file('photo_id'))
@@ -103,7 +102,6 @@ class ChangePasswordController extends Controller
 
         }
 
-        $input['password'] = bcrypt($request->password);
 
         $user->update($input);
 
